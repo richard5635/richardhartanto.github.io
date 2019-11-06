@@ -1,18 +1,37 @@
 ---
 title: Welcoming
-createdDate: '2017-04-18'
-updatedDate: '2017-05-06'
+subtitle: 2D Game Implementation
+description: >-
+  Think! Think! is the free educational app to help improve your children’s
+  thinking ‘sense’, their problem solving and critical thinking skills.
+  Supervised by an elite team of education specialists in Japan, it has become
+  Japan’s leading educational app for children, with over 50,000 active users.
+createdDate: '2017-05-02'
+updatedDate: '2019-11-06'
+targetAudience: Children using smartphones and tablets
+dateDuration: May 2017 until Apr 2018
+myRole: Unity Game Developer
+myRoleDesc: >-
+  I implemented several game designs using Unity for Hanamaru Labs educational
+  app, Think-think. I interned there on a twelve hours per week basis. While
+  receiving supervision from Naoki Kosaka and image resources, I implemented the
+  games from scratch until they fully work. During my intern, I mainly used
+  Unity's 2D Tools with minimum reliance on Physics Engine. 
 author: Fabien BERNARD
 tags:
-  - starter
-  - gatsby
+  - Unity
+  - 'C#'
+  - Game Development
 image: pexels-photo-253092.jpeg
+bgColor: '#F0F0F0'
 draft: false
 ---
 
 Welcome to gatsby-starter!
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique lacus vitae diam posuere faucibus. In hac habitasse platea dictumst. Ut id arcu non risus tincidunt commodo. Sed felis leo, pharetra non porttitor sodales, sodales dictum tortor. Vivamus vel neque interdum, egestas urna ac, finibus tellus. Morbi et rhoncus ligula, nec volutpat dolor. Cras efficitur ipsum a facilisis laoreet. Duis ut libero eget mi convallis maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque blandit sit amet erat vel semper.
+
+<img src="pexels-photo-253092.jpeg"></img>
 
 Ut egestas nisl in nunc accumsan, et interdum erat finibus. Fusce commodo ex nec imperdiet fermentum. Suspendisse non nulla eu eros rutrum vestibulum. Curabitur sit amet tortor venenatis, efficitur felis non, commodo urna. Aliquam ut auctor risus. Nullam nec felis pellentesque, tincidunt erat ut, aliquam neque. Ut elementum aliquam leo.
 

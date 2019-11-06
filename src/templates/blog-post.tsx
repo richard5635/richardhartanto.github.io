@@ -2,10 +2,12 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { get } from "lodash";
 import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
+import HeaderBar from "./../components/Header/Header";
 import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection, Site } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
+import BackButton from "../components/backButton";
 import { DiscussionEmbed } from "disqus-react";
-import {withLayout, LayoutProps} from "../components/Layout";
+import { withLayout, LayoutProps } from "../components/Layout";
 import { graphql } from "gatsby";
 
 interface BlogPostProps extends LayoutProps {
@@ -58,11 +60,14 @@ const BlogPostPage = (props: BlogPostProps) => {
       );
     });
 
-  const cover = get(frontmatter, "image.children.0.fixed", {} );
+  const cover = get(frontmatter, "image.children.0.fixed", {});
+  const coverImage = {
+    backgroundColor: frontmatter.bgColor,
+    backgroundImage: "url(" + {...cover}.src + ")",
+  };
   return (
-    <Container>
-      <BlogTitle />
-      <Segment vertical style={{ border: "none" }}>
+    <div className="site-sections">
+      {/* <Segment vertical style={{ border: "none" }}>
         <Item.Group>
           <Item>
             <Item.Image size="tiny"
@@ -77,34 +82,63 @@ const BlogPostPage = (props: BlogPostProps) => {
             </Item.Content>
           </Item>
         </Item.Group>
-        <Header as="h1">{frontmatter.title}</Header>
-      </Segment>
-      <Image
-        {...cover}
-        fluid
-      /> 
-      <Segment vertical
-        style={{ border: "none" }}
-        dangerouslySetInnerHTML={{
-          __html: html,
-        }}
-      />
-      <Segment vertical>
-        {tags}
-      </Segment>
-      {props.data.site
+      </Segment> */}
+      {/* Make the Image below have fixed ratio */}
+      {/* <Image {...cover} fluid /> */}
+      <div className="article-coverImage" style={coverImage}></div>
+      <div className="site-spacer"></div>
+      <div className="site-container">
+        <div className="ui stackable grid">
+          <div className="sixteen wide column">
+            <Header as="h1">{frontmatter.title}</Header>
+            <Header as="h3">{frontmatter.subtitle}</Header>
+            <p>{frontmatter.description}</p>
+            {/* <div>{tags}</div> */}
+          </div>
+        </div>
+      </div>
+      <div className="site-spacer"></div>
+      <div className="site-container">
+        <div class="ui stackable grid">
+          <div class="eight wide column">
+            <h2>Target Audience</h2>
+            <p>{frontmatter.targetAudience}</p>
+            <h2>Date and Work Duration</h2>
+            <p>{frontmatter.dateDuration}</p>
+          </div>
+          <div class="eight wide column">
+            <h2>My Role</h2>
+            <h3>{frontmatter.myRole}</h3>
+            <p>{frontmatter.myRoleDesc}</p>
+          </div>
+        </div>
+        <div class="ui divider"></div>
+      </div>
+      {/* Article content goes here */}
+      <div className="site-container">
+        <div className="ui stackable grid">
+          <div className="sixteen wide column" dangerouslySetInnerHTML={{
+            __html: html,
+          }}></div>
+        </div>
+      </div>
+
+      {/* Comments section */}
+
+      {/* {props.data.site
         && props.data.site.siteMetadata
         && props.data.site.siteMetadata.disqus
         && <Segment vertical>
-            <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus} config={{}}/>
+          <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus} config={{}} />
         </Segment>
-      }
-      <Segment vertical>
+      } */}
+
+      {/* <Segment vertical>
         <Grid padded centered>
           {recents}
         </Grid>
-      </Segment>
-    </Container>
+      </Segment> */}
+    </div>
   );
 };
 
@@ -142,7 +176,14 @@ export const pageQuery = graphql`
         }
       }
       title
+      subtitle
+      description
       updatedDate(formatString: "MMM D, YYYY")
+      targetAudience
+      dateDuration
+      myRole
+      myRoleDesc
+      bgColor
       image {
         children {
           ... on ImageSharp {

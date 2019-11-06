@@ -1,14 +1,18 @@
 import { Link } from "gatsby";
 import * as React from "react";
 import HeaderMenu from "./HeaderMenu/HeaderMenu";
+import HeaderBar from "./Header/Header";
 import SidebarMenu from "./SidebarMenu/SidebarMenu";
 import { Segment, Icon, Container, Sidebar } from "semantic-ui-react";
+import { Provider } from "react-redux";
+import { store } from "../store";
+
+// This is where CSS is loaded
 import "../css/styles.css";
 import "../css/responsive.css";
 import "../css/semantic.min.css";
+
 import "prismjs/themes/prism-okaidia.css";
-import { Provider } from "react-redux";
-import { store } from "../store";
 
 export const menuItems = [
   { name: "Home", path: "/", exact: true, icon: "home", inverted: true },
@@ -35,11 +39,7 @@ const Layout = (props: LayoutProps) => {
 
         <Sidebar.Pusher style={{ minHeight: "100vh" }}>
           {/* Header */}
-          {isHome ? null : <HeaderMenu
-            Link={Link}
-            pathname={pathname}
-            items={menuItems}
-          />}
+          <HeaderBar/>
 
           {/* Render children pages */}
           <div style={{ paddingBottom: 60 }}>
@@ -47,10 +47,10 @@ const Layout = (props: LayoutProps) => {
           </div>
 
           {/* Footer */}
-          <Segment inverted vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
-            <Container textAlign="center">
+          <Segment vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
+            {/* <Container textAlign="center">
               <p>Powered with <Icon name="heart" /> by Gatsby 2.0</p>
-            </Container>
+            </Container> */}
           </Segment>
         </Sidebar.Pusher>
       </Sidebar.Pushable>

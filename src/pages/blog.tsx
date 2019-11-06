@@ -128,6 +128,7 @@ query PageBlog {
         }
         frontmatter {
           title
+          subtitle
           updatedDate(formatString: "DD MMMM, YYYY")
           image {
           	children {

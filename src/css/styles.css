@@ -1,6 +1,95 @@
+body {
+  /* color: #505050; */
+  font-size: 18px;
+}
+
+.site-sections {
+  display: block;
+  max-width: 100%;
+}
+
+.site-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1230px;
+}
+
+.site-spacer {
+  height: 2em;
+}
+
+.site-spacer--big {
+  height: 4em;
+}
+
+.site-header {
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+
+.article-coverImage {
+  padding-bottom: 27.77777777777778rem;
+
+  /* background-image: url(http://kurtwinterdesign.com/wp-content/uploads/2018/06/Bed-Builder-Cover@2x.jpg); */
+  background-size: cover;
+  background-position: 50% 0%;
+  background-attachment: scroll;
+}
+
+.avatar {
+  min-width: 150px;
+  max-width: 200px;
+}
+
+.page .work-container {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.intro {
+  font-size: 24px;
+}
+
+.intro .icons {
+  font-size: 18px;
+}
+
+.logo {
+  padding: 8px;
+  max-width: 64px;
+  height: auto;
+}
+
 .hidden.menu {
   display: none;
 }
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+  .siteheader {
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+/* @media only screen and (min-width: 600px) {} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+/* @media only screen and (min-width: 768px) {} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+/* @media only screen and (min-width: 992px) {} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+/* @media only screen and (min-width: 1200px) {} */
+
+/* ==== BUILT IN CSS ===== */
 
 .masthead.segment {
   min-height: 700px;
@@ -90,6 +179,7 @@
 }
 
 /* Code blocks (Fix a strange bug with prismjs) */
+
 pre {
   padding: 1em;
   margin: 0.5em 0;

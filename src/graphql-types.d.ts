@@ -1581,8 +1581,15 @@ export enum MarkdownRemarkFieldsEnum {
   internal___owner = "internal___owner",
   internal___type = "internal___type",
   frontmatter___title = "frontmatter___title",
+  frontmatter___subtitle = "frontmatter___subtitle",
+  frontmatter___description = "frontmatter___description",
+  frontmatter___targetAudience = "frontmatter___targetAudience",
+  frontmatter___dateDuration = "frontmatter___dateDuration",
+  frontmatter___myRole = "frontmatter___myRole",
+  frontmatter___myRoleDesc = "frontmatter___myRoleDesc",
   frontmatter___createdDate = "frontmatter___createdDate",
   frontmatter___updatedDate = "frontmatter___updatedDate",
+  frontmatter___bgColor = "frontmatter___bgColor",
   frontmatter___author___id = "frontmatter___author___id",
   frontmatter___author___parent___id = "frontmatter___author___parent___id",
   frontmatter___author___parent___children = "frontmatter___author___parent___children",
@@ -1725,8 +1732,15 @@ export type MarkdownRemarkFilterInput = {
 export type MarkdownRemarkFrontmatter = {
   __typename?: "MarkdownRemarkFrontmatter";
   title?: Maybe<Scalars["String"]>;
+  subtitle?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
   createdDate?: Maybe<Scalars["Date"]>;
   updatedDate?: Maybe<Scalars["Date"]>;
+  targetAudience?: Maybe<Scalars["String"]>;
+  dateDuration?: Maybe<Scalars["String"]>;
+  bgColor?: Maybe<Scalars["String"]>;
+  myRole?: Maybe<Scalars["String"]>;
+  myRoleDesc?: Maybe<Scalars["String"]>;
   author?: Maybe<AuthorJson>;
   tags?: Maybe<Array<Maybe<Scalars["String"]>>>;
   image?: Maybe<File>;
@@ -1749,8 +1763,15 @@ export type MarkdownRemarkFrontmatterupdatedDateArgs = {
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
+  subtitle?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
   createdDate?: Maybe<DateQueryOperatorInput>;
   updatedDate?: Maybe<DateQueryOperatorInput>;
+  targetAudience?: Maybe<Scalars["String"]>;
+  dateDuration?: Maybe<Scalars["String"]>;
+  myRole?: Maybe<Scalars["String"]>;
+  myRoleDesc?: Maybe<Scalars["String"]>;
+  bgColor?: Maybe<Scalars["String"]>;
   author?: Maybe<AuthorJsonFilterInput>;
   tags?: Maybe<StringQueryOperatorInput>;
   image?: Maybe<FileFilterInput>;
